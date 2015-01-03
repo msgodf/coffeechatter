@@ -12,7 +12,11 @@ commands:[
          { id: 7, name: "Baristas?", type: "vote", class:"label-success", choices:['Yes','No']}
          ]
 };
-dust.render("commands",commands,function(err,out){$('#commands').append(out);});
+
+setTimeout(function () {
+    dust.render("commands",commands,function(err,out){$('#commands').append(out);});
+}, 10);
+
 var socket = null;
 function connect(nick,email){
     var server = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ":"+window.location.port : "");
